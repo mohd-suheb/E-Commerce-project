@@ -36,13 +36,16 @@ import { getUserDetails } from "./services/operations/profileAPI"
 import { ACCOUNT_TYPE } from "./utils/constants"
 
 function App() {
+  console.log("Base URL:", process.env.REACT_APP_BASE_URL)
   const dispatch = useDispatch()
   const navigate = useNavigate()
   const { user } = useSelector((state) => state.profile)
 
   useEffect(() => {
     if (localStorage.getItem("token")) {
-      const token = JSON.parse(localStorage.getItem("token"))
+      // const token = JSON.parse(localStorage.getItem("token"))
+      const token = localStorage.getItem("token")
+
       dispatch(getUserDetails(token, navigate))
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
