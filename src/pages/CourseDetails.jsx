@@ -62,7 +62,7 @@ function CourseDetails() {
     setIsActive(
       !isActive.includes(id)
         ? isActive.concat([id])
-        : isActive.filter((e) => e != id)
+        : isActive.filter((e) => e !== id)
     )
   }
 
@@ -88,7 +88,7 @@ function CourseDetails() {
   }
 
   const {
-    _id: course_id,
+    // _id: course_id,
     courseName,
     courseDescription,
     thumbnail,
@@ -117,7 +117,7 @@ function CourseDetails() {
   }
 
   if (paymentLoading) {
-    // console.log("payment loading")
+     console.log("payment loading")
     return (
       <div className="grid min-h-[calc(100vh-3.5rem)] place-items-center">
         <div className="spinner"></div>
